@@ -1,0 +1,74 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/todo_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/fragment_vertical_padding"
+    android:paddingRight="@dimen/fragment_horizontal_padding"
+    android:paddingTop="@dimen/fragment_vertical_padding"
+    android:paddingLeft="@dimen/fragment_horizontal_padding"
+    >
+
+        <LinearLayout
+            android:id="@+id/ll_todofragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:focusableInTouchMode="true"
+                    >
+
+                        <CheckBox
+                            android:id="@+id/todo_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            />
+
+                        <EditText
+                            android:id="@+id/todo_input"
+                            android:layout_width="240dp"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:hint="What needs to be done?"
+                            android:textColorHint="@color/hint"
+                            />
+
+                        <Button
+                            android:id="@+id/todo_add"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:text="Add"
+                            />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/todo_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/todo_clear_completed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Clear completed"
+            />
+
+</LinearLayout>

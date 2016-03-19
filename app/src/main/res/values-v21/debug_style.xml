@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DebugColors" parent="Theme.AppCompat.NoActionBar">
+
+
+        <!-- System colors -->
+        <item name="android:windowBackground">@color/__debugWindowBackground</item>
+
+
+        <item name="android:colorPressedHighlight">#FF4400</item>
+        <item name="android:colorLongPressedHighlight">#FF0044</item>
+        <item name="android:colorFocusedHighlight">#44FF00</item>
+        <item name="android:colorActivatedHighlight">#00FF44</item>
+        <item name="android:colorMultiSelectHighlight">#4400FF</item>
+
+
+        <item name="android:statusBarColor">#FFF000</item>
+        <item name="android:navigationBarColor">#000FFF</item>
+
+
+        <item name="android:colorForeground">#4400ff</item>
+        <item name="android:colorForegroundInverse">#004400</item>
+        <item name="android:colorBackground">#ffffff</item>
+        <item name="android:colorBackgroundCacheHint">#440044</item>
+
+
+        <!--toolbar overflow-->
+        <item name="android:textColorPrimary">#0e8ae9</item>
+        <item name="android:textColorSecondary">#FF00FF</item>
+        <item name="android:textColorTertiary">#00FFFF</item>
+
+
+        <item name="android:textColorPrimaryInverse">#ff00ff</item>
+        <item name="android:textColorSecondaryInverse">#CC00CC</item>
+        <item name="android:textColorTertiaryInverse">#00CCCC</item>
+
+
+        <item name="android:textColorPrimaryDisableOnly">#FFCC00</item>
+        <item name="android:textColorPrimaryInverseDisableOnly">#FF00CC</item>
+
+
+        <item name="android:textColorPrimaryNoDisable">#CCFF00</item>
+        <item name="android:textColorSecondaryNoDisable">#00FFCC</item>
+
+
+        <item name="android:textColorPrimaryInverseNoDisable">#CC00FF</item>
+        <item name="android:textColorSecondaryInverseNoDisable">#00CCFF</item>
+
+
+        <item name="android:textColorHint">#FF8800</item>
+        <item name="android:textColorHintInverse">#FF0088</item>
+
+
+        <item name="android:textColorHighlight">#88FF00</item>
+        <item name="android:textColorHighlightInverse">#00FF88</item>
+
+
+        <item name="android:textColorLink">#8800FF</item>
+        <item name="android:textColorLinkInverse">#0088FF</item>
+
+
+        <item name="android:textColorAlertDialogListItem">#444444</item>
+
+
+        <!-- Color palette (via app-compat) -->
+        <item name="colorPrimary">#FF00FF</item>
+        <!--<item name="colorPrimaryDark">#00FF00</item>-->
+        <item name="colorAccent">#0000FF</item>
+
+
+        <!--The arrow and the overflow-->
+        <item name="colorControlNormal">#0e8ae9</item>
+        <item name="colorControlActivated">#00CC00</item>
+        <item name="colorControlHighlight">#00bfff</item>
+
+
+        <item name="colorButtonNormal">#8800ff</item>
+        <item name="colorSwitchThumbNormal">#008800</item>
+
+
+        <!-- Random other things found in app-compat -->
+        <item name="actionMenuTextColor">#440000</item>
+        <item name="editTextColor">#004400</item>
+        <item name="textColorSearchUrl">#000044</item>
+
+
+    </style>
+</resources>

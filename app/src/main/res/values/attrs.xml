@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WeatherTag">
+        <attr name="date" format="string"/>
+        <attr name="date_size" format="dimension"/>
+        <attr name="weather" format="reference"/>
+        <attr name="temperature" format="string"/>
+        <attr name="temperature_size" format="dimension"/>
+    </declare-styleable>
+</resources>

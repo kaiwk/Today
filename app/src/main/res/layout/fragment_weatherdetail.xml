@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/tablerow_height"
+            style="@style/tablerow_fragment_weatherdetail"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/weather_detail"
+                />
+
+            <TextView
+                android:id="@+id/tv_weatherdetail_weather"
+                style="@style/textview_fragment_weatherdetail"
+                />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/tablerow_height"
+            style="@style/tablerow_fragment_weatherdetail"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/maxtemp"
+                />
+            <TextView
+                android:id="@+id/tv_weatherdetail_maxtemp"
+                style="@style/textview_fragment_weatherdetail"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/tablerow_height"
+            style="@style/tablerow_fragment_weatherdetail"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/mintemp"
+                />
+            <TextView
+                android:id="@+id/tv_weatherdetail_mintemp"
+                style="@style/textview_fragment_weatherdetail"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/tablerow_height"
+            style="@style/tablerow_fragment_weatherdetail"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/pollution"
+                />
+            <TextView
+                android:id="@+id/tv_weatherdetail_pollution"
+                style="@style/textview_fragment_weatherdetail"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/tablerow_height"
+            style="@style/tablerow_fragment_weatherdetail"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/suggestion"
+                />
+            <TextView
+                android:id="@+id/tv_weatherdetail_suggestion"
+                android:singleLine="false"
+                style="@style/textview_fragment_weatherdetail"
+                />
+        </TableRow>
+
+
+    </TableLayout>
+
+
+</LinearLayout>

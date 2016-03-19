@@ -1,0 +1,35 @@
+<resources>
+
+    <string name="app_name">Today</string>
+
+    <!--overflow-->
+    <string name="item_menu_setting">Setting</string>
+    <string name="item_menu_sync">Sync</string>
+    <string name="item_menu_clearcomplete">Clear completed</string>
+
+
+    <!--drawer parameters-->
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+
+    <!--left menu item-->
+    <string name="today_schedule">今日计划</string>
+    <string name="today_news">今日新闻</string>
+    <string name="today_weather">今日天气</string>
+
+    <!--weather type-->
+    <string name="sunny">晴</string>
+    <string name="cloudy">多云</string>
+    <string name="windy">风</string>
+    <string name="foggy">雾</string>
+    <string name="rainy">雨</string>
+    <string name="snowy">雪</string>
+
+    <!--wether detail dialog-->
+    <string name="weather_detail">天气情况:</string>
+    <string name="maxtemp">最高温度:</string>
+    <string name="mintemp">最低气温:</string>
+    <string name="pollution">污染程度:</string>
+    <string name="suggestion">生活建议:</string>
+
+</resources>

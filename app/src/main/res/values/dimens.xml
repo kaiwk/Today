@@ -1,0 +1,27 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--fragment-->
+    <dimen name="fragment_horizontal_padding">8dp</dimen>
+    <dimen name="fragment_vertical_padding">8dp</dimen>
+
+    <!--Left menu-->
+    <dimen name="left_menu_width">240dp</dimen>
+    <dimen name="left_menu_img_height">120dp</dimen>
+
+    <!--Main backgroud-->
+    <dimen name="main_background">1dp</dimen>
+    <dimen name="main_background_corners">5dp</dimen>
+
+    <!--weatherfragment bottom-->
+    <dimen name="date_size">6dp</dimen>
+    <dimen name="temperature">6dp</dimen>
+
+    <!--weahter detail fragment-->
+    <dimen name="tablerow_height">48dp</dimen>
+    <dimen name="tablerow_detailweatherfragment_padding_horizontal">5dp</dimen>
+    <dimen name="tablerow_detailweatherfragment_padding_vertical">8dp</dimen>
+
+</resources>

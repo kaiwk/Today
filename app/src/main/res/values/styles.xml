@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="android:windowBackground">@color/window_background</item>
+
+        <item name="android:textColorPrimary">#FFFF00</item>
+        <item name="android:textColorSecondary">#FF00FF</item>
+        <item name="android:textColorTertiary">@color/theme_color</item>
+        <item name="android:colorBackground">#ffffff</item>
+
+        <item name="android:textColorPrimaryInverse">#CCCCFF</item>
+        <item name="android:textColorSecondaryInverse">#CC00CC</item>
+        <item name="android:textColorTertiaryInverse">#00CCCC</item>
+        <item name="android:textColorSecondaryInverseNoDisable">#00CCFF</item>
+
+        <item name="colorControlNormal">@color/theme_color</item>
+        <item name="colorControlActivated">#00CC00</item>
+        <item name="colorControlHighlight">@color/theme_color</item>
+
+    </style>
+
+    <style name="textview_weatherfragment_location">
+        <item name="android:text">"苏州"</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="textview_weatherfragment_pm">
+        <item name="android:text">PM2.5</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="tablerow_fragment_weatherdetail">
+        <item name="android:paddingLeft">@dimen/tablerow_detailweatherfragment_padding_horizontal
+        </item>
+        <item name="android:paddingRight">@dimen/tablerow_detailweatherfragment_padding_horizontal
+        </item>
+        <item name="android:paddingTop">@dimen/tablerow_detailweatherfragment_padding_vertical
+        </item>
+        <item name="android:paddingBottom">@dimen/tablerow_detailweatherfragment_padding_vertical
+        </item>
+    </style>
+
+    <style name="textview_fragment_weatherdetail">
+        <item name="android:layout_width">240dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+
+</resources>

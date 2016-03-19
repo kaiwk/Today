@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tv_weatherfragment_location"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="160dp"
+            style="@style/textview_weatherfragment_location"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                style="@style/textview_weatherfragment_pm"
+                />
+
+            <TextView
+                android:id="@+id/tv_weatherfragment_pm"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:paddingTop="8dp"
+                android:gravity="center_horizontal"
+                android:text="26"
+                style="@style/textview_weatherfragment_pm"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_weatherfragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/img_weatherfragment_weather"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="200dp"
+                android:padding="48dp"
+                android:src="@drawable/sunny"
+                />
+
+            <TextView
+                android:id="@+id/tv_weatherfragment_temp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="200dp"
+                android:gravity="center_vertical"
+                android:text="16℃"
+                android:textSize="72sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@id/ll_weatherfragment"
+            >
+
+            <io.github.kermit95.today.weather.widget.WeatherTag
+                android:id="@+id/weather_0"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:weather="@drawable/sunny"
+                app:date="FRI"
+                app:temperature="19℃"
+                app:date_size="@dimen/date_size"
+                app:temperature_size="@dimen/temperature"
+                />
+
+            <io.github.kermit95.today.weather.widget.WeatherTag
+                android:id="@+id/weather_1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:weather="@drawable/sunny"
+                app:date="FRI"
+                app:temperature="19℃"
+                app:date_size="@dimen/date_size"
+                app:temperature_size="@dimen/temperature"
+                />
+
+            <io.github.kermit95.today.weather.widget.WeatherTag
+                android:id="@+id/weather_2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:weather="@drawable/sunny"
+                app:date="FRI"
+                app:temperature="19℃"
+                app:date_size="@dimen/date_size"
+                app:temperature_size="@dimen/temperature"
+                />
+
+            <io.github.kermit95.today.weather.widget.WeatherTag
+                android:id="@+id/weather_3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:weather="@drawable/sunny"
+                app:date="FRI"
+                app:temperature="19℃"
+                app:date_size="@dimen/date_size"
+                app:temperature_size="@dimen/temperature"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
