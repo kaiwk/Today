@@ -1,6 +1,5 @@
 package io.github.kermit95.today.main.view;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
@@ -13,11 +12,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import io.github.kermit95.today.R;
+import io.github.kermit95.today.data.DataProvider;
 import io.github.kermit95.today.data.local.LeftMenuItem;
-import io.github.kermit95.today.data.local.Todo;
 
 /**
  * Created by kermit on 16/3/13.
@@ -42,7 +39,7 @@ public class LeftMenuAdapter extends BaseAdapter{
     private void initData(Context context) {
         Resources resources = context.getResources();
         for(int i = 0; i < 3; ++i){
-            LeftMenuItem item = new LeftMenuItem(resources.getString(itemsName[i]), picIds[i]);
+            LeftMenuItem item = DataProvider.produceLeftMenuItem(resources.getString(itemsName[i]), picIds[i]);
             mItemList.add(item);
         }
     }

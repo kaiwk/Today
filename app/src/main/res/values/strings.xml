@@ -24,6 +24,7 @@
     <string name="foggy">雾</string>
     <string name="rainy">雨</string>
     <string name="snowy">雪</string>
+    <string name="dark">阴</string>
 
     <!--wether detail dialog-->
     <string name="weather_detail">天气情况:</string>

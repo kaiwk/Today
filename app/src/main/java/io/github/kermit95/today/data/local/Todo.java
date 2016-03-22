@@ -1,9 +1,13 @@
 package io.github.kermit95.today.data.local;
 
+import com.google.gson.Gson;
+
+import io.github.kermit95.today.data.JSONSerializer;
+
 /**
  * Created by kermit on 16/3/15.
  */
-public class Todo implements Cloneable, Comparable<Todo>{
+public class Todo implements Cloneable, Comparable<Todo>, JSONSerializer{
 
     private long id;
     private boolean isComplete;
@@ -19,6 +23,8 @@ public class Todo implements Cloneable, Comparable<Todo>{
         this.id = id;
         this.text = text;
     }
+
+    public Todo(){}
 
     public long getId() {
         return id;
@@ -58,5 +64,10 @@ public class Todo implements Cloneable, Comparable<Todo>{
         } else {
             return 1;
         }
+    }
+
+    @Override
+    public String toJSON() {
+        return new Gson().toJson(this);
     }
 }

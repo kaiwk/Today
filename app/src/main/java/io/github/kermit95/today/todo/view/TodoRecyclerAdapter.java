@@ -16,8 +16,10 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.github.kermit95.today.R;
+import io.github.kermit95.today.data.TodoModel;
 import io.github.kermit95.today.data.local.Todo;
 import io.github.kermit95.today.todo.TodoActionsCreator;
+import io.github.kermit95.today.todo.TodoStore;
 
 public class TodoRecyclerAdapter extends RecyclerView.Adapter<TodoRecyclerAdapter.ViewHolder> {
 
@@ -25,7 +27,7 @@ public class TodoRecyclerAdapter extends RecyclerView.Adapter<TodoRecyclerAdapte
     private List<Todo> todos;
 
     public TodoRecyclerAdapter(TodoActionsCreator todoActionsCreator) {
-        this.todos = new ArrayList<>();
+        this.todos = TodoModel.getInstance().readList(TodoStore.TODOLIST_FILENAME);
         TodoRecyclerAdapter.sTodoActionsCreator = todoActionsCreator;
     }
 

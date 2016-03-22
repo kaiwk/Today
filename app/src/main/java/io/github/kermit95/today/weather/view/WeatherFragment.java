@@ -83,7 +83,6 @@ public class WeatherFragment extends Fragment {
         initDependencies();
         setWeather4();
 
-        mActionsCreatort.updateData();
         return v;
     }
 
@@ -103,6 +102,9 @@ public class WeatherFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+
+        mActionsCreatort.getData();
+
         mDispatcher.register(this);
         mDispatcher.register(mWeatherStore);
     }
@@ -122,12 +124,36 @@ public class WeatherFragment extends Fragment {
 
     @Subscribe
     public void onWeatherStoreChange(WeatherStore.WeatherChangeEvent event) {
+        Log.d(TAG, "onWeatherStoreChange: something changed!");
     }
 
     @Subscribe
     public void onWeatherUpdate(WeatherStore.WeatherUpdateEvent event) {
         Log.d(TAG, "onWeatherUpdate: I got it!");
+        getData();
+    }
 
+    public static final String WEATHERDISPLAY_SERIALIZABLE= "WeatherDisplay";
+    @Subscribe
+    public void onWeatherCheckDetail(WeatherStore.WeatherCheckDetailEvent event) {
+        Log.d(TAG, "onWeatherCheckDetail: I got it!");
+        mWeatherDisplay = mWeatherDisplays.get(event.getPosition());
+
+        if (mWeatherDisplay == null) return;
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(WEATHERDISPLAY_SERIALIZABLE, mWeatherDisplay);
+        WeatherDetail weatherDetail = WeatherDetail.newInstance(bundle);
+        weatherDetail.show(getFragmentManager(), WeatherDetail.TAG);
+    }
+
+    @Subscribe
+    public void onLoadLocaldata(WeatherStore.WeahterLoadLocaldataEvent event){
+        Log.d(TAG, "onLoadLocaldata: got it!");
+        getData();
+    }
+
+    private void getData(){
         mWeatherDisplays = mWeatherStore.getWeathers();
         mWeatherDisplay = mWeatherDisplays.get(0);
 
@@ -146,17 +172,7 @@ public class WeatherFragment extends Fragment {
         setWeatherTag(mWeather3, mWeatherStore.getWeathers().get(3));
     }
 
-    public static final String WEATHERDISPLAY_SERIALIZABLE= "WeatherDisplay";
-    @Subscribe
-    public void onWeatherCheckDetail(WeatherStore.WeatherCheckDetailEvent event) {
-        Log.d(TAG, "onWeatherCheckDetail: I got it!");
-        mWeatherDisplay = mWeatherStore.getWeatherDisplay();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(WEATHERDISPLAY_SERIALIZABLE, mWeatherDisplay);
-        WeatherDetail weatherDetail = WeatherDetail.newInstance(bundle);
-        weatherDetail.show(getFragmentManager(), WeatherDetail.TAG);
-    }
-
+    //set detail and format time
     public static final String FORMAT_STRING = "yyyy-MM-dd";
     public void setWeatherTag(WeatherTag weatherTag, WeatherDisplay weatherDisplay) {
         String week = DateUtil.getWeekDay(weatherDisplay.getDate(), FORMAT_STRING);

@@ -1,8 +1,10 @@
 package io.github.kermit95.today.todo;
 
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import org.greenrobot.eventbus.Subscribe;
 
@@ -11,6 +13,9 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import io.github.kermit95.today.data.DataProvider;
+import io.github.kermit95.today.data.JSONSerializer;
+import io.github.kermit95.today.data.TodoModel;
 import io.github.kermit95.today.data.local.Todo;
 import io.github.kermit95.today.fluxbase.Action;
 import io.github.kermit95.today.fluxbase.Dispatcher;
@@ -21,9 +26,13 @@ import io.github.kermit95.today.fluxbase.Store;
  */
 public class TodoStore extends Store {
 
+    private static final String TAG = "TodoStore";
+
     private static TodoStore sTodoStore;
     private final List<Todo> mTodoList;
+    private Dispatcher mDispatcher;
     private Todo lastDeleted;
+
 
     public static TodoStore get(@NonNull Dispatcher dispatcher){
         if (sTodoStore == null){
@@ -34,6 +43,7 @@ public class TodoStore extends Store {
 
     protected TodoStore(Dispatcher dispatcher) {
         super(dispatcher);
+        this.mDispatcher = dispatcher;
         mTodoList = new ArrayList<>();
     }
 
@@ -57,10 +67,12 @@ public class TodoStore extends Store {
             case TodoAction.TODO_CREATE:
                 String text = (String) action.getData().get(TodoAction.KEY_TEXT);
                 create(text);
+                mDispatcher.emitChange(new AddTodoEvent());
                 break;
             case TodoAction.TODO_DELETE:
                 id = (long) action.getData().get(TodoAction.KEY_ID);
                 delete(id);
+                mDispatcher.emitChange(new DeleteTodoEvent());
                 break;
             case TodoAction.TODO_UNDO_DELETE:
                 undoDelete();
@@ -82,13 +94,21 @@ public class TodoStore extends Store {
             default:
                 throw new IllegalArgumentException("Illegal action!");
         }
-
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                TodoModel.getInstance().saveList(mTodoList, TODOLIST_FILENAME, Context.MODE_PRIVATE);
+            }
+        }.start();
         emitStoreChange();
     }
 
+
+    public static final String TODOLIST_FILENAME = "todos";
     private void create(String text){
         long id = System.currentTimeMillis();
-        Todo todo = new Todo(id, text);
+        Todo todo = DataProvider.produceTodo(id, text);
         put(todo);
     }
 
@@ -173,4 +193,6 @@ public class TodoStore extends Store {
     }
 
     public class TodoStoreChangeEvent implements StoreChangeEvent{}
+    public class AddTodoEvent implements StoreChangeEvent{}
+    public class DeleteTodoEvent implements StoreChangeEvent{}
 }

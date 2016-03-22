@@ -2,12 +2,16 @@ package io.github.kermit95.today.data.remote.model.weather;
 
 import android.support.annotation.DrawableRes;
 
+import com.google.gson.Gson;
+
 import java.io.Serializable;
+
+import io.github.kermit95.today.data.JSONSerializer;
 
 /**
  * Created by kermit on 16/3/17.
  */
-public class WeatherDisplay implements Serializable{
+public class WeatherDisplay implements Serializable, JSONSerializer{
 
     private int weatherIcon;
     private String pm;
@@ -106,5 +110,10 @@ public class WeatherDisplay implements Serializable{
                 ", suggestion='" + suggestion + '\'' +
                 ", pollution='" + pollution + '\'' +
                 '}';
+    }
+
+    @Override
+    public String toJSON() {
+        return new Gson().toJson(this);
     }
 }

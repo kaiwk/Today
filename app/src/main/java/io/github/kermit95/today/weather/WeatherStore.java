@@ -1,5 +1,6 @@
 package io.github.kermit95.today.weather;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -7,6 +8,8 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
+import io.github.kermit95.today.data.WeatherModel;
+import io.github.kermit95.today.data.remote.model.weather.Weather;
 import io.github.kermit95.today.data.remote.model.weather.WeatherDisplay;
 import io.github.kermit95.today.fluxbase.Action;
 import io.github.kermit95.today.fluxbase.Dispatcher;
@@ -22,7 +25,6 @@ public class WeatherStore extends Store {
     private Dispatcher mDispatcher;
 
     private static WeatherStore instance;
-    private WeatherDisplay mWeatherDisplay;
     private List<WeatherDisplay> mWeathers;
 
     public static WeatherStore getInstance(@Nullable Dispatcher dispatcher){
@@ -42,11 +44,6 @@ public class WeatherStore extends Store {
         return mWeathers;
     }
 
-    @NonNull
-    public WeatherDisplay getWeatherDisplay(){
-        return mWeatherDisplay;
-    }
-
     /**
      * 响应来自ActionCreator的事件,并通知view更新
      * @param action
@@ -60,8 +57,12 @@ public class WeatherStore extends Store {
                 emitUpdate();
                 break;
             case WeatherAction.CHECK_DETAIL:
-                mWeatherDisplay = (WeatherDisplay) action.getData().get(WeatherAction.KEY_WEATHER);
-                emitCheckDetail();
+                int position = (int) action.getData().get(WeatherAction.DETAIL_POSITION);
+                emitCheckDetail(position);
+                break;
+            case WeatherAction.LOAD_LOCALDATA:
+                mWeathers = (List<WeatherDisplay>) action.getData().get(WeatherAction.KEY_WEATHERLIST);
+                emitLoadLocaldata();
                 break;
         }
 
@@ -69,11 +70,15 @@ public class WeatherStore extends Store {
     }
 
     private void emitUpdate(){
-        mDispatcher.post(new WeatherUpdateEvent());
+        mDispatcher.emitChange(new WeatherUpdateEvent());
     }
 
-    private void emitCheckDetail(){
-        mDispatcher.post(new WeatherCheckDetailEvent());
+    private void emitCheckDetail(int position){
+        mDispatcher.emitChange(new WeatherCheckDetailEvent(position));
+    }
+
+    private void emitLoadLocaldata(){
+        mDispatcher.emitChange(new WeahterLoadLocaldataEvent());
     }
 
     @Override
@@ -83,5 +88,16 @@ public class WeatherStore extends Store {
 
     public class WeatherChangeEvent implements StoreChangeEvent{}
     public class WeatherUpdateEvent implements StoreChangeEvent{}
-    public class WeatherCheckDetailEvent implements StoreChangeEvent{}
+    public class WeatherCheckDetailEvent implements StoreChangeEvent{
+        private int position;
+
+        private WeatherCheckDetailEvent(int position){
+            this.position = position;
+        }
+
+        public int getPosition() {
+            return position;
+        }
+    }
+    public class WeahterLoadLocaldataEvent implements StoreChangeEvent{}
 }

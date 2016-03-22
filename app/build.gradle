@@ -36,5 +36,6 @@ dependencies {
     provided 'javax.annotation:jsr250-api:1.0'
     compile 'com.android.support:recyclerview-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
+    compile 'com.github.Kermit95:ExUtils:v1.0.7'
     compile files('libs/AMap_Location_V2.4.0_20160308.jar')
 }

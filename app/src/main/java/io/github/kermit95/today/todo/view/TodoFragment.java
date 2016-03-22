@@ -67,7 +67,6 @@ public class TodoFragment extends Fragment {
         ButterKnife.bind(this, view);
         initDependencies();
 
-
         mTodoAdd.setOnClickListener(v -> {
             addTodo();
             resetMainInput();
@@ -76,8 +75,8 @@ public class TodoFragment extends Fragment {
         mTodoCheckbox.setOnClickListener(v -> checkAll());
 
         mTodoClearCompleted.setOnClickListener(v -> {
-                clearCompleted();
-                resetMainCheck();
+            clearCompleted();
+            resetMainCheck();
         });
 
 
@@ -96,12 +95,6 @@ public class TodoFragment extends Fragment {
 
     private void updateUI() {
         listAdapter.setItems(todoStore.getTodoList());
-
-        if (todoStore.canUndo()) {
-            Snackbar snackbar = Snackbar.make(mTodoLayout, "Element deleted", Snackbar.LENGTH_LONG);
-            snackbar.setAction("Undo", (v) -> mTodoActionsCreator.undoDelete());
-            snackbar.show();
-        }
     }
 
 
@@ -156,6 +149,18 @@ public class TodoFragment extends Fragment {
         updateUI();
     }
 
+    @Subscribe
+    public void onAddTodoEvent(TodoStore.AddTodoEvent event){
+    }
+
+    @Subscribe
+    public void onDeletTodoEvent(TodoStore.DeleteTodoEvent event){
+        if (todoStore.canUndo()) {
+            Snackbar snackbar = Snackbar.make(mTodoLayout, "Element deleted", Snackbar.LENGTH_LONG);
+            snackbar.setAction("Undo", (v) -> mTodoActionsCreator.undoDelete());
+            snackbar.show();
+        }
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
