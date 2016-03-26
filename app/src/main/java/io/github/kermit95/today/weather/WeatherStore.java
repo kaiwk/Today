@@ -1,6 +1,5 @@
 package io.github.kermit95.today.weather;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -8,9 +7,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
-import io.github.kermit95.today.data.WeatherModel;
-import io.github.kermit95.today.data.remote.model.weather.Weather;
-import io.github.kermit95.today.data.remote.model.weather.WeatherDisplay;
+import io.github.kermit95.today.data.remote.bean.weather.WeatherDisplay;
 import io.github.kermit95.today.fluxbase.Action;
 import io.github.kermit95.today.fluxbase.Dispatcher;
 import io.github.kermit95.today.fluxbase.Store;

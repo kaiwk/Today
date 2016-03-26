@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/cardview_newsitem_margin_vertical"
+    android:layout_marginBottom="@dimen/cardview_newsitem_margin_vertical"
+    android:layout_marginLeft="@dimen/cardview_newsitem_margin_horizontal"
+    android:layout_marginRight="@dimen/cardview_newsitem_margin_horizontal"
+    android:paddingTop="@dimen/cardview_newsitem_padding_vertical"
+    android:paddingRight="@dimen/cardview_newsitem_padding_horizontal"
+    android:paddingBottom="@dimen/cardview_newsitem_padding_vertical"
+    android:paddingLeft="@dimen/cardview_newsitem_padding_horizontal"
+    android:elevation="4dp"
+    cardview:cardElevation="10dp"
+    cardview:cardCornerRadius="5dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_news_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="title"
+            style="@style/tv_news_item_title"
+            />
+
+        <TextView
+            android:id="@+id/tv_news_item_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="desc"
+            android:layout_marginBottom="5dp"
+            style="@style/tv_news_item_desc"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/tv_news_item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="2016-3-20"
+                style="@style/tv_news_item_extrainfo"
+                />
+
+            <TextView
+                android:id="@+id/tv_news_item_staticfrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_news_item_from"
+                android:text="from"
+                android:layout_marginRight="8dp"
+                style="@style/tv_news_item_extrainfo"
+                />
+
+            <TextView
+                android:id="@+id/tv_news_item_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="光明网"
+                style="@style/tv_news_item_extrainfo"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

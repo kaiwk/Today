@@ -4,7 +4,6 @@ package io.github.kermit95.today.todo;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import org.greenrobot.eventbus.Subscribe;
 
@@ -14,9 +13,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import io.github.kermit95.today.data.DataProvider;
-import io.github.kermit95.today.data.JSONSerializer;
-import io.github.kermit95.today.data.TodoModel;
-import io.github.kermit95.today.data.local.Todo;
+import io.github.kermit95.today.data.local.model.TodoModel;
+import io.github.kermit95.today.data.local.bean.Todo;
 import io.github.kermit95.today.fluxbase.Action;
 import io.github.kermit95.today.fluxbase.Dispatcher;
 import io.github.kermit95.today.fluxbase.Store;

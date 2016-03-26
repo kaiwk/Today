@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import io.github.kermit95.today.fluxbase.App;
+import io.github.kermit95.today.main.App;
 
 /**
  * Created by kermit on 16/3/24.

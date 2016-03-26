@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,14 +21,22 @@ import org.greenrobot.eventbus.Subscribe;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.github.kermit95.today.R;
+import io.github.kermit95.today.data.Constants;
+import io.github.kermit95.today.data.remote.bean.news.News;
+import io.github.kermit95.today.data.remote.webservice.NewsService;
 import io.github.kermit95.today.fluxbase.Dispatcher;
 import io.github.kermit95.today.main.MainActionCreator;
 import io.github.kermit95.today.main.MainStore;
+import io.github.kermit95.today.news.view.NewsFragment;
 import io.github.kermit95.today.todo.view.TodoFragment;
 import io.github.kermit95.today.weather.view.WeatherFragment;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements WeatherFragment.Callback {
 
+    private static final String TAG = "MainActivity";
 
     @Bind(R.id.toolbar_main)
     Toolbar mToolbar;
@@ -96,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements WeatherFragment.C
                     mFragment = WeatherFragment.newInstance();
                     break;
                 case 2:
+                    mFragment = NewsFragment.newInstance();
                     break;
             }
             getSupportFragmentManager()

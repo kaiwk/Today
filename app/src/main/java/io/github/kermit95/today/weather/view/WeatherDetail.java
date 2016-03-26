@@ -11,7 +11,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.github.kermit95.today.R;
-import io.github.kermit95.today.data.remote.model.weather.WeatherDisplay;
+import io.github.kermit95.today.data.remote.bean.weather.WeatherDisplay;
 
 /**
  * Created by kermit on 16/3/16.
@@ -57,6 +57,7 @@ public class WeatherDetail extends DialogFragment {
         setUpView();
         return view;
     }
+
 
     private void setUpView() {
         mTvWeather.setText(mWeatherDisplay.getWeatherString());

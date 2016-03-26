@@ -1,6 +1,6 @@
 package io.github.kermit95.today.todo;
 
-import io.github.kermit95.today.data.local.Todo;
+import io.github.kermit95.today.data.local.bean.Todo;
 import io.github.kermit95.today.fluxbase.Dispatcher;
 
 /**

@@ -24,4 +24,17 @@
     <dimen name="tablerow_detailweatherfragment_padding_horizontal">5dp</dimen>
     <dimen name="tablerow_detailweatherfragment_padding_vertical">8dp</dimen>
 
+    <!--cardview margin padding-->
+    <dimen name="cardview_newsitem_margin_vertical">8dp</dimen>
+    <dimen name="cardview_newsitem_margin_horizontal">5dp</dimen>
+
+    <dimen name="cardview_newsitem_padding_vertical">4dp</dimen>
+    <dimen name="cardview_newsitem_padding_horizontal">4dp</dimen>
+
+    <!-- news_item -->
+    <dimen name="tv_newsitem_title">24sp</dimen>
+    <dimen name="tv_newsitem_desc">16sp</dimen>
+
+    <dimen name="tv_newsitem_date">12sp</dimen>
+
 </resources>

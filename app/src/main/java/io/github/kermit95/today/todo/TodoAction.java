@@ -8,6 +8,7 @@ public final class TodoAction {
 
     private TodoAction(){}
 
+    //type
     public static final String TODO_CREATE = "todo-create";
     public static final String TODO_COMPLETE = "todo-complete";
     public static final String TODO_DELETE = "todo-destroy";
@@ -17,6 +18,7 @@ public final class TodoAction {
     public static final String TODO_UNDO_DELETE = "todo-undo-destroy";
 
 
+    //data
     public static final String KEY_TEXT = "key-text";
     public static final String  KEY_ID = "key-id";
 }

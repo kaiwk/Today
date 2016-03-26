@@ -17,13 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.github.kermit95.today.R;
-import io.github.kermit95.today.data.WeatherModel;
-import io.github.kermit95.today.data.remote.WeatherService;
-import io.github.kermit95.today.data.remote.model.weather.DailyForecast;
-import io.github.kermit95.today.data.remote.model.weather.HeWeatherDataService30;
-import io.github.kermit95.today.data.remote.model.weather.Weather;
-import io.github.kermit95.today.data.remote.model.weather.WeatherDisplay;
-import io.github.kermit95.today.fluxbase.App;
+import io.github.kermit95.today.data.remote.model.WeatherModel;
+import io.github.kermit95.today.data.remote.webservice.WeatherService;
+import io.github.kermit95.today.data.remote.bean.weather.DailyForecast;
+import io.github.kermit95.today.data.remote.bean.weather.HeWeatherDataService30;
+import io.github.kermit95.today.data.remote.bean.weather.Weather;
+import io.github.kermit95.today.data.remote.bean.weather.WeatherDisplay;
+import io.github.kermit95.today.main.App;
 import io.github.kermit95.today.fluxbase.Dispatcher;
 import io.github.kermit95.today.util.AMapProvider;
 import io.github.kermit95.today.util.MyUtils;
@@ -67,10 +67,13 @@ public class WeatherActionsCreatort {
         }
     };
 
+
     private AMapProvider mAMapProvider;
 
     /**
-     * 更新数据并把事件发送给Store
+     * Two way to laod data.
+     * if has network, fetch data from network.
+     * else load data from local file.
      */
     public void getData(){
         if (NetUtils.hasNetwork() || MyUtils.isWifi()) {
@@ -93,8 +96,9 @@ public class WeatherActionsCreatort {
                     update(city);
                     break;
                 case LOAD_LOCAL_DATA:
-                    Log.e(TAG, "loadLoadFile: " + mWeathers.get(0).getLocation());
-                    if (mWeathers == null) return;
+                    if (mWeathers == null) {
+                        return;
+                    }
                     mDispatcher.dispatch(WeatherAction.LOAD_LOCALDATA, WeatherAction.KEY_WEATHERLIST, mWeathers);
                     break;
             }
@@ -130,6 +134,7 @@ public class WeatherActionsCreatort {
         if (TextUtils.isEmpty(city) || city == null){
             city = "重庆";
         }
+
         final String finalCity = city;
         WeatherService.Factory.getInstance().getWeather(finalCity).enqueue(new Callback<Weather>() {
             @Override
@@ -143,7 +148,6 @@ public class WeatherActionsCreatort {
                 }
 
                 List<DailyForecast> mDailyForecasts = mWeatherDataService30List.get(0).getDailyForecast();
-                Log.e(TAG, "onResponse: " + mDailyForecasts.get(0).getTmp());
 
                 String pm25 = mWeatherDataService30List.get(0).getAqi().getCity().getPm25();
                 String suggestion = mWeatherDataService30List.get(0).getSuggestion().getDrsg().getTxt();
@@ -158,6 +162,8 @@ public class WeatherActionsCreatort {
                 }
                 WeatherModel.getInstance().saveList(mWeathers, WEATHERLIST_FILENAME, Context.MODE_PRIVATE);
                 mDispatcher.dispatch(WeatherAction.UPDATE_WEATHER, WeatherAction.KEY_WEATHERLIST, mWeathers);
+
+                // remove locationlistener
                 mAMapProvider.stopLocation(mAMapLocationListener);
             }
 
@@ -168,6 +174,10 @@ public class WeatherActionsCreatort {
         });
     }
 
+    /**
+     * Four weather tag behaviour.
+     * @param position
+     */
     public void checkDetail(int position){
         if (mWeathers == null){
             Log.d(TAG, "getData: checkDetail(): datumlist is null");
@@ -183,8 +193,16 @@ public class WeatherActionsCreatort {
 
 
 
+
+
+
+
+
+
+
+
     /**
-     * A helper class
+     * A helper class to filter weather data.
      */
     private final static class DataFilter{
 
@@ -227,5 +245,4 @@ public class WeatherActionsCreatort {
             return weatherDisplay;
         }
     }
-
 }

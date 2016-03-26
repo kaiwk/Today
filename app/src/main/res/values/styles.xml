@@ -52,4 +52,36 @@
         <item name="android:layout_marginLeft">5dp</item>
     </style>
 
+    <!--news with img item title-->
+    <style name="tv_news_with_img_item_title">
+        <item name="android:textSize">@dimen/tv_newsitem_title</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="tv_news_with_img_item_desc">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/tv_newsitem_desc</item>
+    </style>
+
+    <style name="tv_news_item_with_img_extrainfo">
+        <item name="android:textSize">@dimen/tv_newsitem_date</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!--news no img item title-->
+    <style name="tv_news_item_title">
+        <item name="android:textSize">@dimen/tv_newsitem_title</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="tv_news_item_desc">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/tv_newsitem_desc</item>
+    </style>
+
+    <style name="tv_news_item_extrainfo">
+        <item name="android:textSize">@dimen/tv_newsitem_date</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
 </resources>

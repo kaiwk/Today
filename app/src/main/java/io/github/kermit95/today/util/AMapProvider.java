@@ -4,7 +4,7 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 
-import io.github.kermit95.today.fluxbase.App;
+import io.github.kermit95.today.main.App;
 
 /**
  * Created by kermit on 16/3/17.

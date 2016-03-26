@@ -52,7 +52,7 @@ public class Dispatcher {
     }
 
     //该方法会post任何事件
-    public void post(final Object event){
+    public void post(@NonNull final Object event){
         mBus.post(event);
     }
 

@@ -26,8 +26,10 @@
             android:id="@+id/main_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/main_background"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             >
 
         </FrameLayout>

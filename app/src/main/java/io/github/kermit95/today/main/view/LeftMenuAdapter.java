@@ -14,7 +14,7 @@ import java.util.List;
 
 import io.github.kermit95.today.R;
 import io.github.kermit95.today.data.DataProvider;
-import io.github.kermit95.today.data.local.LeftMenuItem;
+import io.github.kermit95.today.data.local.bean.LeftMenuItem;
 
 /**
  * Created by kermit on 16/3/13.

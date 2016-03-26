@@ -19,7 +19,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.github.kermit95.today.R;
-import io.github.kermit95.today.data.remote.model.weather.WeatherDisplay;
+import io.github.kermit95.today.data.remote.bean.weather.WeatherDisplay;
 import io.github.kermit95.today.fluxbase.Dispatcher;
 import io.github.kermit95.today.weather.WeatherActionsCreatort;
 import io.github.kermit95.today.weather.WeatherStore;
@@ -103,6 +103,7 @@ public class WeatherFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
+        //load data
         mActionsCreatort.getData();
 
         mDispatcher.register(this);

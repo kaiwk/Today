@@ -10,14 +10,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.github.kermit95.today.R;
-import io.github.kermit95.today.data.TodoModel;
-import io.github.kermit95.today.data.local.Todo;
+import io.github.kermit95.today.data.local.model.TodoModel;
+import io.github.kermit95.today.data.local.bean.Todo;
 import io.github.kermit95.today.todo.TodoActionsCreator;
 import io.github.kermit95.today.todo.TodoStore;
 
