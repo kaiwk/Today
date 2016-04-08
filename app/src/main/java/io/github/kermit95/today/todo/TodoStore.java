@@ -12,9 +12,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import io.github.kermit95.today.data.DataProvider;
-import io.github.kermit95.today.data.local.model.TodoModel;
 import io.github.kermit95.today.data.local.bean.Todo;
+import io.github.kermit95.today.data.local.model.TodoModel;
 import io.github.kermit95.today.fluxbase.Action;
 import io.github.kermit95.today.fluxbase.Dispatcher;
 import io.github.kermit95.today.fluxbase.Store;
@@ -106,7 +105,7 @@ public class TodoStore extends Store {
     public static final String TODOLIST_FILENAME = "todos";
     private void create(String text){
         long id = System.currentTimeMillis();
-        Todo todo = DataProvider.produceTodo(id, text);
+        Todo todo = new Todo(id, text);
         put(todo);
     }
 

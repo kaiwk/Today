@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.github.kermit95.today.R;
-import io.github.kermit95.today.data.DataProvider;
 import io.github.kermit95.today.data.local.bean.LeftMenuItem;
 
 /**
@@ -39,7 +38,7 @@ public class LeftMenuAdapter extends BaseAdapter{
     private void initData(Context context) {
         Resources resources = context.getResources();
         for(int i = 0; i < 3; ++i){
-            LeftMenuItem item = DataProvider.produceLeftMenuItem(resources.getString(itemsName[i]), picIds[i]);
+            LeftMenuItem item = new LeftMenuItem(resources.getString(itemsName[i]), picIds[i]);
             mItemList.add(item);
         }
     }

@@ -130,7 +130,7 @@ public class WeatherActionsCreatort {
 
         Log.e(TAG, "onLocationChanged: " + city);
 
-        //// TODO: 16/3/24 高德api无法使用
+        // FIXME: 16/3/24 高德api无法使用
         if (TextUtils.isEmpty(city) || city == null){
             city = "重庆";
         }
@@ -152,6 +152,7 @@ public class WeatherActionsCreatort {
                 String pm25 = mWeatherDataService30List.get(0).getAqi().getCity().getPm25();
                 String suggestion = mWeatherDataService30List.get(0).getSuggestion().getDrsg().getTxt();
                 String pollution = mWeatherDataService30List.get(0).getAqi().getCity().getQlty();
+
                 for(int i = 0; i < mDailyForecasts.size(); ++i){
                     WeatherDisplay weather = DataFilter.getWeatherDisplay(mDailyForecasts.get(i));
                     weather.setPm(pm25);
@@ -160,6 +161,7 @@ public class WeatherActionsCreatort {
                     weather.setPollution(pollution);
                     mWeathers.add(weather);
                 }
+
                 WeatherModel.getInstance().saveList(mWeathers, WEATHERLIST_FILENAME, Context.MODE_PRIVATE);
                 mDispatcher.dispatch(WeatherAction.UPDATE_WEATHER, WeatherAction.KEY_WEATHERLIST, mWeathers);
 
@@ -189,8 +191,6 @@ public class WeatherActionsCreatort {
         }
         mDispatcher.dispatch(WeatherAction.CHECK_DETAIL, WeatherAction.DETAIL_POSITION, position);
     }
-
-
 
 
 

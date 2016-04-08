@@ -1,8 +1,5 @@
 package io.github.kermit95.today.util;
 
-import android.util.Log;
-
-import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

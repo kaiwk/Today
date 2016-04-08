@@ -60,7 +60,7 @@ public class NewsActionsCreator {
     }
 
     public void loadMore(){
-
+        // TODO: 16/4/8 load more
     }
 
     private static class DataFilter{
@@ -70,8 +70,6 @@ public class NewsActionsCreator {
             List<NewsDisplay> newsDisplays = new ArrayList<>();
             int size = contentlists.size();
 
-//            Contentlist content;
-//            NewsDisplay news;
             for (int i = 0; i < size; i++) {
                 Contentlist content = contentlists.get(i);
                 NewsDisplay news = new NewsDisplay();

@@ -40,6 +40,7 @@ public class NewsWithImgVH extends BaseViewHolder<NewsDisplay> {
     public void setData(NewsDisplay itemData) {
         super.setData(itemData);
 
+        //simple and crude
         if (itemData.getImgUrls() != null){
             new Thread(){
                 @Override
