@@ -1,7 +1,13 @@
 
 ### Today
 
++ todo
++ 天气查询
++ 新闻
+
 [Flux介绍](http://kermit95.github.io/2016/03/19/Flux%E6%A8%A1%E5%BC%8F%E5%AE%9E%E8%B7%B5/)
+
+![Today](image/flux0.png)
 
 PS:
 
@@ -10,12 +16,12 @@ PS:
 3. Dispatcher可以用EventBus/Otto实现, 但如果你使用了RxJava, 可以自己实现RxBus替代
 4. 了解更多关于Android架构消息, 请关注[官方信息](https://github.com/googlesamples/android-architecture/issues)
 
+### 了解更多
 
-
-![Today](image/flux0.png)
++ [Flux介绍](http://kermit95.github.io/2016/03/19/Flux%E6%A8%A1%E5%BC%8F%E5%AE%9E%E8%B7%B5)
++ [AndroidFlux一览](http://androidflux.github.io/docs/overview.html#content)
 
 ### Thanks for
 
-[lgvalle](https://github.com/lgvalle/android-flux-todo-app)
-
-[ntop](http://www.jianshu.com/p/896ce1a8e4ed)
++ [lgvalle](https://github.com/lgvalle/android-flux-todo-app)
++ [ntop](http://www.jianshu.com/p/896ce1a8e4ed)
