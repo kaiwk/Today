@@ -5,7 +5,7 @@
 + 天气查询
 + 新闻
 
-[Flux介绍](http://kermit95.github.io/2016/03/19/Flux%E6%A8%A1%E5%BC%8F%E5%AE%9E%E8%B7%B5/)
+[Flux介绍](https://github.com/Kermit95/Today/wiki)
 
 ![Today](image/flux0.png)
 
@@ -18,7 +18,6 @@ PS:
 
 ### 了解更多
 
-+ [Flux介绍](http://kermit95.github.io/2016/03/19/Flux%E6%A8%A1%E5%BC%8F%E5%AE%9E%E8%B7%B5)
 + [AndroidFlux一览](http://androidflux.github.io/docs/overview.html#content)
 
 ### Thanks for
