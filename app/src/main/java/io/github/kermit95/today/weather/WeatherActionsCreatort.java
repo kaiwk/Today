@@ -11,7 +11,6 @@ import android.util.Log;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
-import com.kermit.exutils.utils.NetUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,7 +75,7 @@ public class WeatherActionsCreatort {
      * else load data from local file.
      */
     public void getData(){
-        if (NetUtils.hasNetwork() || MyUtils.isWifi()) {
+        if (MyUtils.hasNetwork() || MyUtils.isWifi()) {
             //高德地图的回调是在非主线程,虽然EventBus支持线程调度,但是为了程序的可维护性,依然使用了handler
             mAMapProvider = new AMapProvider.Builder(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy, true)
                     .isWifiActiveScan(true).interval(1000).build();

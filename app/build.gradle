@@ -39,7 +39,6 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     provided 'javax.annotation:jsr250-api:1.0'
-    compile 'com.github.Kermit95:ExUtils:v1.0.7'
     compile 'com.github.Kermit95:BaseRecycler:v1.0.2'
     compile files('libs/AMap_Location_V2.4.0_20160308.jar')
 }

@@ -43,7 +43,7 @@ public class TodoRecyclerAdapter extends RecyclerView.Adapter<TodoRecyclerAdapte
 
     @Override
     public int getItemCount() {
-        return todos.size();
+        return todos == null ? 0 : todos.size();
     }
 
     public void setItems(List<Todo> todos) {
